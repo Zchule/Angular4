@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContarClicksDirective } from './directives/contar-clicks.directive';
+import { ResaltarDirective } from './directives/resaltar.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResaltarDirective,
+    ContarClicksDirective
   ],
   imports: [
     BrowserModule,
