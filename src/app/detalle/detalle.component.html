@@ -1,1 +1,13 @@
-<h1>Detalle</h1>
+<div class="alert alert-secondary" role="alert">
+  <a routerLink="/lugares">lugares</a> / {{lugar.nombre}}
+</div>
+<div class="container">
+    <h1>{{lugar.nombre}}</h1>
+    <hr />
+    <small>{{lugar.distancia}} Km.</small>
+    <br />
+    <div class="alert alert-primary" role="alert">
+      <p>Description:{{lugar.description}}</p>
+      <b> Plan: {{lugar.plan}}</b>
+    </div>
+</div>
