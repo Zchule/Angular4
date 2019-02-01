@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LugaresService } from '../services/lugares.service';
 
 @Component({
   selector: 'app-crear',
@@ -8,7 +9,11 @@ import { Component } from '@angular/core';
 export class CrearComponent {
   lugar:any = {};
 
+  constructor( private afData: LugaresService){
+
+  }
+
   guardarLugar() {
-    console.log(this.lugar);
+    this.afData.saveLugar(this.lugar);
   }
 }

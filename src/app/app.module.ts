@@ -11,9 +11,10 @@ import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { CrearComponent } from './crear/crear.component';
 
 import { FormsModule } from '@angular/forms'; 
@@ -27,15 +28,12 @@ const appRoutes: Routes = [
   ];
 
   export const firebaseConfig = {
-    production: false,
-    firebase : {
       apiKey: "AIzaSyCxGDvQ3QGX2rRwKkIbEaYscWekwTw8c_A",
       authDomain: "platzisquare-7e8ce.firebaseapp.com",
       databaseURL: "https://platzisquare-7e8ce.firebaseio.com",
       projectId: "platzisquare-7e8ce",
       storageBucket: "platzisquare-7e8ce.appspot.com",
       messagingSenderId: "59699983713"
-    }
   };
 
 @NgModule({
@@ -54,8 +52,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
     AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     LugaresService
