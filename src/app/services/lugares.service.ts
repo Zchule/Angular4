@@ -30,7 +30,6 @@ export class LugaresService{
   }
 
   saveLugar(lugar){
-   console.log(lugar);
    this.afDB.list('lugares').push(lugar);
   }
 }
