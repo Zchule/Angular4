@@ -14,6 +14,9 @@ export class CrearComponent {
   }
 
   guardarLugar() {
+    this.lugar.id = Date.now(); 
     this.afData.saveLugar(this.lugar);
+    alert('negocio guardado');
+    this.lugar = {};
   }
 }

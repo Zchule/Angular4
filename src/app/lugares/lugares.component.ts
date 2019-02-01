@@ -11,7 +11,10 @@ export class LugaresComponent {
   constructor( 
     private lugaresService: LugaresService
     ) {
-      this.lugares = this.lugaresService.getLugares();
+      lugaresService.getLugares().subscribe((lugares)=>{
+        this.lugares = lugares;
+      });
+      
   }
 }
 

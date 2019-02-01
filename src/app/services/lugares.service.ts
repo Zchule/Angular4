@@ -20,7 +20,7 @@ export class LugaresService{
   }
 
   public getLugares() {
-    return this.lugares;
+    return this.afDB.list('/lugares').valueChanges();
   }
 
   buscarLugar(id) {
@@ -30,6 +30,7 @@ export class LugaresService{
   }
 
   saveLugar(lugar){
-   this.afDB.list('lugares').push(lugar);
+  // this.afDB.list('lugares/'+ lugar.id).push(lugar); con id firebase
+   this.afDB.object('lugares/'+ lugar.id).set(lugar);
   }
 }
