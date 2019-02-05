@@ -15,11 +15,9 @@ export class CrearComponent {
   guardarLugar() {
     const direccion = this.lugar.calle + ',' + this.lugar.ciudad + ',' + this.lugar.pais;
     this.afData.obtenerGeoData(direccion)
-    .subscribe((result) => {
-      // tslint:disable-next-line:no-debugger
-      debugger;
-      this.lugar.lat = result[0].geometry.location.lat;
-      this.lugar.lng = result[0].geometry.location.lng;
+    .subscribe((result: any) => {
+      this.lugar.lat = result.results[0].geometry.location.lat;
+      this.lugar.lng = result.results[0].geometry.location.lng;
 
       this.lugar.id = Date.now();
       this.afData.saveLugar(this.lugar);

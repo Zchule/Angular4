@@ -36,7 +36,10 @@ export class LugaresService {
   }
 
   public obtenerGeoData(direccion) {
+    // http://maps.google.com/maps/api/geocode/json?address=
     // http://maps.google.com/maps/api/geocode/json?address=9-55+calle+72,+Bogota,Colombia
-    return this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + direccion);
+    // return this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + direccion);
+    // tslint:disable-next-line:max-line-length
+    return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyB9qJ58RNJfsaPz9LkOqN5Cx4gJIThbpHQ&address=' + direccion);
   }
 }
