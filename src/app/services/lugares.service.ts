@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 
@@ -13,6 +13,8 @@ export class LugaresService {
     {id: '5', plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre: 'Hotel la Gracia'},
     {id: '6', plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre: 'Zapatería el Clavo'}
   ];
+
+  API_ENDPOINT = 'https://platzisquare-7e8ce.firebaseio.com';
 
   constructor(
     private afDB: AngularFireDatabase,
@@ -36,7 +38,9 @@ export class LugaresService {
 
   saveLugar(lugar) {
   // this.afDB.list('lugares/'+ lugar.id).push(lugar); con id firebase
-   this.afDB.object('lugares/' + lugar.id).set(lugar);
+   // this.afDB.object('lugares/' + lugar.id).set(lugar);
+    const headers = new HttpHeaders({'Content-Type': 'aplication/json'});
+    return this.http.post(this.API_ENDPOINT + '/lugares.json', lugar, { headers: headers }).subscribe();
   }
 
   editLugar(lugar) {
