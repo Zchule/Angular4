@@ -21,6 +21,7 @@ import { CrearComponent } from './crear/crear.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MapComponent } from './map/map.component';
 
 const appRoutes: Routes = [
   { path: '', component: LugaresComponent },
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'lugares/detalle/:id', component: DetalleComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'crear', component: CrearComponent },
+  { path: 'map', component: MapComponent },
   ];
 
   export const firebaseConfig = {
@@ -47,13 +49,14 @@ const appRoutes: Routes = [
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDY-SUUEs5bM8xIsFLhnPhEJBHAbTArUI4'
+      apiKey: 'AIzaSyB9qJ58RNJfsaPz9LkOqN5Cx4gJIThbpHQ'
     }),
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
