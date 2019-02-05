@@ -18,8 +18,8 @@ export class CrearComponent {
     .subscribe((result) => {
       // tslint:disable-next-line:no-debugger
       debugger;
-      // this.lugar.lat = result.json().results[0].geometry.location.lat;
-      // this.lugar.lng = result.json().results[0].geometry.location.lng;
+      this.lugar.lat = result[0].geometry.location.lat;
+      this.lugar.lng = result[0].geometry.location.lng;
 
       this.lugar.id = Date.now();
       this.afData.saveLugar(this.lugar);
