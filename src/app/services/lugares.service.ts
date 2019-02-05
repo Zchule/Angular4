@@ -20,6 +20,10 @@ export class LugaresService {
     ) {
   }
 
+  public getLugar(id) {
+    return this.afDB.object('lugares/' + id);
+  }
+
   public getLugares() {
     return this.afDB.list('/lugares').valueChanges();
   }
@@ -34,6 +38,10 @@ export class LugaresService {
   // this.afDB.list('lugares/'+ lugar.id).push(lugar); con id firebase
    this.afDB.object('lugares/' + lugar.id).set(lugar);
   }
+
+  editLugar(lugar) {
+     this.afDB.object('lugares/' + lugar.id).set(lugar);
+    }
 
   public obtenerGeoData(direccion) {
     // http://maps.google.com/maps/api/geocode/json?address=

@@ -24,11 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LugaresComponent },
+  { path: '', redirectTo: 'lugares', pathMatch: 'full' },
   { path: 'lugares', component: LugaresComponent },
   { path: 'lugares/detalle/:id', component: DetalleComponent },
+  { path: 'lugares/crear/:id', component: CrearComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: 'crear', component: CrearComponent },
   { path: 'map', component: MapComponent },
   ];
 
