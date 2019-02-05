@@ -11,13 +11,16 @@ import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { CrearComponent } from './crear/crear.component';
 
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: LugaresComponent },
@@ -28,12 +31,12 @@ const appRoutes: Routes = [
   ];
 
   export const firebaseConfig = {
-      apiKey: "AIzaSyCxGDvQ3QGX2rRwKkIbEaYscWekwTw8c_A",
-      authDomain: "platzisquare-7e8ce.firebaseapp.com",
-      databaseURL: "https://platzisquare-7e8ce.firebaseio.com",
-      projectId: "platzisquare-7e8ce",
-      storageBucket: "platzisquare-7e8ce.appspot.com",
-      messagingSenderId: "59699983713"
+      apiKey: 'AIzaSyCxGDvQ3QGX2rRwKkIbEaYscWekwTw8c_A',
+      authDomain: 'platzisquare-7e8ce.firebaseapp.com',
+      databaseURL: 'https://platzisquare-7e8ce.firebaseio.com',
+      projectId: 'platzisquare-7e8ce',
+      storageBucket: 'platzisquare-7e8ce.appspot.com',
+      messagingSenderId: '59699983713'
   };
 
 @NgModule({
@@ -49,11 +52,15 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDY-SUUEs5bM8xIsFLhnPhEJBHAbTArUI4'
+    }),
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
   ],
   providers: [
     LugaresService

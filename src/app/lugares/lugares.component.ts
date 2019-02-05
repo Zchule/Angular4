@@ -8,13 +8,14 @@ import { LugaresService } from '../services/lugares.service';
 export class LugaresComponent {
   title = 'PlatziSquare';
   lugares = null;
-  constructor( 
+  lat = 4.6560663;
+  lng = -74.0595918;
+  constructor(
     private lugaresService: LugaresService
     ) {
-      lugaresService.getLugares().subscribe((lugares)=>{
+      lugaresService.getLugares().subscribe((lugares) => {
         this.lugares = lugares;
       });
-      
   }
 }
 
