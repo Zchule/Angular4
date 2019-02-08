@@ -27,7 +27,9 @@ export class LugaresService {
   }
 
   public getLugares() {
-    return this.afDB.list('/lugares').valueChanges();
+    // return this.afDB.list('/lugares').valueChanges();
+    // tslint:disable-next-line:max-line-length
+    return this.http.get(this.API_ENDPOINT + '/lugares.json');
   }
 
   buscarLugar(id) {

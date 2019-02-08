@@ -14,7 +14,8 @@ export class LugaresComponent {
     private lugaresService: LugaresService
     ) {
       lugaresService.getLugares().subscribe((lugares) => {
-        this.lugares = lugares;
+        // this.lugares = lugares;
+        this.lugares = Object.values(lugares);
       });
   }
 }
