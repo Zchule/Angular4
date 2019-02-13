@@ -16,6 +16,9 @@ export class LugaresComponent {
       lugaresService.getLugares().subscribe((lugares) => {
         // this.lugares = lugares;
         this.lugares = Object.values(lugares);
+      }, error => {
+        console.log(error);
+        alert('tenemos algunos errores');
       });
   }
 }
