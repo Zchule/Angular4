@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
 
 import { LinkyfystrPipe } from './pipes/linkyfystr.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'lugares', pathMatch: 'full' },
   { path: 'lugares', component: LugaresComponent },
@@ -67,6 +67,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     LugaresService
