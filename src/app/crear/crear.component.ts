@@ -18,12 +18,12 @@ export class CrearComponent {
       this.id = this.route.snapshot.params['id'];
       console.log(this.id);
       if (this.id !== 'new') {
-        this.afData.getLugar(this.id).valueChanges()
+        this.afData.getLugar(this.id)
         .subscribe((lugar) => {
           this.lugar = lugar;
         });
       }
-      }
+    }
 
   guardarLugar() {
     const direccion = this.lugar.calle + ',' + this.lugar.ciudad + ',' + this.lugar.pais;

@@ -10,14 +10,13 @@
       <a class="btn btn-primary" routerLink="crear/new">Crear Nuevo Negocio</a>
       <ul class="list-group">
         <ng-container *ngFor="let lugar of lugares">
-           <a routerLink="crear/{{lugar.id}}">
-            <li class="list-group-item">{{lugar.nombre}}
+            <li class="list-group-item">
+                <a routerLink="crear/{{lugar.id}}"><h5>{{lugar.nombre}}</h5></a>
               <br /> 
-              <small>Creado: {{ lugar.id | date:"medium" | uppercase }}</small>
+              <small>Creado: {{ lugar.id }}</small>
               <br />
-              {{ 12345.29852793754 | number:"1.2-2" }}
+              <p [innerHtml]="lugar.description | linkyfystr"></p>
             </li>
-          </a>
         </ng-container>
       </ul>
     </div>

@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
 
+import { LinkyfystrPipe } from './pipes/linkyfystr.pipe';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'lugares', pathMatch: 'full' },
   { path: 'lugares', component: LugaresComponent },
@@ -50,7 +52,8 @@ const appRoutes: Routes = [
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    MapComponent
+    MapComponent,
+    LinkyfystrPipe,
   ],
   imports: [
     BrowserModule,
