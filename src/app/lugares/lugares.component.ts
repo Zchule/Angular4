@@ -44,5 +44,15 @@ export class LugaresComponent {
   animar() {
     this.state = (this.state === 'final') ? 'inicial' : 'final';
   }
+
+  animacionInicial(e) {
+    console.log('inicial');
+    console.log(e);
+  }
+
+  animacionFinal(e) {
+    console.log('final');
+    console.log(e);
+  }
 }
 

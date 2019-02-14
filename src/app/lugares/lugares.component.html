@@ -3,7 +3,7 @@
 </agm-map>
 
 <hr /> 
-<div id="cuadrado" [@contenedorAnimable] = 'state'></div>
+<div id="cuadrado" [@contenedorAnimable] ='state' (@contenedorAnimable.start)='animacionInicial($event)' (@contenedorAnimable.done)='animacionFinal($event)'></div>
 <a class="btn btn-secondary" (click)="animar()">Animar</a>
 <div class="container">
   <div class="row">
