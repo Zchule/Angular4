@@ -22,8 +22,15 @@
         </ng-container>
       </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [@contenedorAnimable] ='state'>
       <h2>lugares destacados</h2>
+      <ng-container *ngFor="let lugar of lugares">
+        <div class="bg-danger padding"  *ngIf="lugar.plan == 'pagado'">
+            <a routerLink="crear/{{lugar.id}}"><h5>{{lugar.nombre}}</h5></a>
+          <br /> 
+          <p [innerHtml]="lugar.description | linkyfystr"></p>
+        </div>
+    </ng-container>
     </div>
   </div>
 </div>
