@@ -10,6 +10,7 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
+import { AutotizacionService } from './services/authorization.service';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -77,7 +78,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
   ],
   providers: [
-    LugaresService
+    LugaresService,
+    AutotizacionService
   ],
   bootstrap: [AppComponent]
 })
