@@ -6,11 +6,14 @@ import { AutotizacionService } from '../services/authorization.service';
   templateUrl: './registro.component.html',
 })
 export class RegistroComponent {
-
+  registro: any = {};
   constructor(
     private authorizationService: AutotizacionService,
   ) {
-    this.authorizationService.registro('email', 'password', 'password2');
+  }
+
+  registrar() {
+    this.authorizationService.registro(this.registro.email, this.registro.password);
   }
 
 }
