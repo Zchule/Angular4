@@ -36,7 +36,6 @@ export class LugaresComponent {
         // this.lugares = lugares;
         this.lugares = Object.values(lugares);
         this.state = 'final';
-
       }, error => {
         console.log(error);
         alert('tenemos algunos errores');

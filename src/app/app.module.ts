@@ -25,12 +25,17 @@ import { MapComponent } from './map/map.component';
 
 import { LinkyfystrPipe } from './pipes/linkyfystr.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'lugares', pathMatch: 'full' },
   { path: 'lugares', component: LugaresComponent },
   { path: 'lugares/detalle/:id', component: DetalleComponent },
   { path: 'lugares/crear/:id', component: CrearComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: 'map', component: MapComponent },
   ];
 
@@ -54,6 +59,8 @@ const appRoutes: Routes = [
     CrearComponent,
     MapComponent,
     LinkyfystrPipe,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
