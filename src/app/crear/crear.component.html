@@ -17,6 +17,12 @@
   <label>Plan</label>
   <input type="text" class="form-control" [(ngModel)]="lugar.plan"/>
   <h2>Datos de Direccion: </h2>
+  <div>
+    <form>
+      <h3>Buscar direccion en Google Maps</h3>
+      <input [formControl]="searchField" class="form-control">
+    </form>
+  </div>
   <label>Calle y numero</label>
   <input type="text" class="form-control" [(ngModel)]="lugar.calle"/>
   <label>Ciudad</label>

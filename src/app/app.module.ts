@@ -20,7 +20,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { CrearComponent } from './crear/crear.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './map/map.component';
 
@@ -78,6 +78,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     LugaresService,
