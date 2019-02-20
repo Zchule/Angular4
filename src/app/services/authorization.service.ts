@@ -55,7 +55,7 @@ export class AutotizacionService {
     this.router.navigate(['lugares']);
   }
 
-  public getEmail() {
-    return this.authFire.auth.currentUser.email;
+  public getUser() {
+    return this.authFire.auth;
   }
 }

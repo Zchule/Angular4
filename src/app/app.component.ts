@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AutotizacionService } from './services/authorization.service';
+import { Observable } from 'rxjs';
+// import 'rxjs/Rx'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import { AutotizacionService } from './services/authorization.service';
 })
 export class AppComponent {
   loggedIn = false;
-  email = null;
+  email: any = null;
   constructor(
     private authService: AutotizacionService,
   ) {
@@ -16,7 +18,9 @@ export class AppComponent {
     .subscribe((result) => {
       if (result && result.uid) {
         this.loggedIn = true;
-        this.email = authService.getEmail();
+        setTimeout(() => {
+          this.email = authService.getUser().currentUser.email;
+        }, 500);
       } else {
         this.loggedIn = false;
       }
