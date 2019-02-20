@@ -29,4 +29,7 @@ export class AutotizacionService {
       console.log(error);
     });
   }
+  public isLogged() {
+    return this.authFire.authState;
+  }
 }

@@ -12,7 +12,7 @@
       <a class="nav-item nav-link" routerLinkActive='active' routerLink="/crear">Crear</a>
       <a class="nav-item nav-link" routerLinkActive='active' routerLink="/map">Map</a>
     </div>
-    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex" *ngIf="!loggedIn">
       <li class="nav-item"> <a class="nav-link" routerLinkActive='active' routerLink='/login'>Login</a> </li>
       <li class="nav-item"> <a class="nav-link" routerLinkActive='active'  routerLink='/registro'>Registro</a> </li>
     </ul>

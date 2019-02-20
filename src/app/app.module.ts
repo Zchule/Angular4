@@ -29,11 +29,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
+import { MyGuardService } from './services/myGuard.service';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'lugares', pathMatch: 'full' },
   { path: 'lugares', component: LugaresComponent },
   { path: 'lugares/detalle/:id', component: DetalleComponent },
-  { path: 'lugares/crear/:id', component: CrearComponent },
+  { path: 'lugares/crear/:id', component: CrearComponent, canActivate: [MyGuardService]},
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
@@ -79,7 +81,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     LugaresService,
-    AutotizacionService
+    AutotizacionService,
+    MyGuardService
   ],
   bootstrap: [AppComponent]
 })
