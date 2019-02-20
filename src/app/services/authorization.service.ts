@@ -40,6 +40,7 @@ export class AutotizacionService {
     this.authFire.auth.createUserWithEmailAndPassword(email, password)
     .then((response) => {
       alert('usuario registrado');
+      this.router.navigate(['lugares']);
     }).catch((error) => {
       alert('error');
       console.log(error);
@@ -47,5 +48,14 @@ export class AutotizacionService {
   }
   public isLogged() {
     return this.authFire.authState;
+  }
+  public logout() {
+    this.authFire.auth.signOut();
+    alert('sesion cerrada');
+    this.router.navigate(['lugares']);
+  }
+
+  public getEmail() {
+    return this.authFire.auth.currentUser.email;
   }
 }

@@ -8,6 +8,7 @@ import { AutotizacionService } from './services/authorization.service';
 })
 export class AppComponent {
   loggedIn = false;
+  email = null;
   constructor(
     private authService: AutotizacionService,
   ) {
@@ -15,11 +16,16 @@ export class AppComponent {
     .subscribe((result) => {
       if (result && result.uid) {
         this.loggedIn = true;
+        this.email = authService.getEmail();
       } else {
         this.loggedIn = false;
       }
     }, (error) => {
       this.loggedIn = false;
     });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
