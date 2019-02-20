@@ -15,4 +15,8 @@ export class LoginComponent {
   login() {
     this.authorizationService.login(this.user.email, this.user.password);
   }
+
+  facebookLogin() {
+    this.authorizationService.faccebookLogin();
+  }
 }
