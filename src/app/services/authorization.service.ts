@@ -11,6 +11,13 @@ export class AutotizacionService {
   }
   public login = (email: string, password: string) => {
     console.log('login');
+    this.authFire.auth.signInWithEmailAndPassword(email, password)
+    .then((response) => {
+      alert('usuario logeado');
+    }).catch((error) => {
+      alert('error');
+      console.log(error);
+    });
   }
   public registro = (email: string, password: string) => {
     console.log('registro');

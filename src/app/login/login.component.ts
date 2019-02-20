@@ -6,9 +6,13 @@ import { AutotizacionService } from '../services/authorization.service';
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
+  user: any = {};
   constructor(
     private authorizationService: AutotizacionService,
   ) {
-    this.authorizationService.login('email', 'password');
+  }
+
+  login() {
+    this.authorizationService.login(this.user.email, this.user.password);
   }
 }
