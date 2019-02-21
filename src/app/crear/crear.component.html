@@ -23,7 +23,7 @@
       <input type="text" class="form-control" [formControl]="searchField">
     </form>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let result of (results$ | async)">
+      <li class="list-group-item" *ngFor="let result of (results$ | async)" (click)="selectDirection(result)">
         {{result.formatted_address}}
       </li>
     </ul>

@@ -63,4 +63,10 @@ export class CrearComponent {
       this.lugar = {};
     });
   }
+
+  selectDirection(direccion) {
+    this.lugar.calle = direccion.address_components[1].long_name + ' ' + direccion.address_components[0].long_name;
+    this.lugar.ciudad = direccion.address_components[4].long_name;
+    this.lugar.pais = direccion.address_components[6].long_name;
+  }
 }
