@@ -18,6 +18,7 @@ export class CrearComponent {
   id: any = null;
   results$: Observable<any>;
   searchField: FormControl;
+
   constructor(
     private afData: LugaresService,
     private route: ActivatedRoute,
@@ -31,13 +32,15 @@ export class CrearComponent {
           this.lugar = lugar;
         });
       }
-      const URL = 'https://maps.google.com/maps/api/geocode/json';
+      // 40.714224,-73.961452
+      const URL = 'https://maps.googleapis.com/maps/api/geocode/json';
       this.searchField = new FormControl();
       this.results$ = this.searchField.valueChanges.pipe(
         debounceTime(300),
-        switchMap(query => this.http.get(`${URL}?address=${query}`)),
+        switchMap(query => this.http.get(`${URL}?address=${query}&key=AIzaSyB9qJ58RNJfsaPz9LkOqN5Cx4gJIThbpHQ`)),
         map((response: any) => response.results),
       );
+      // this.results$.subscribe();
       this.results$.subscribe(rta => {
         console.log(rta);
       });
